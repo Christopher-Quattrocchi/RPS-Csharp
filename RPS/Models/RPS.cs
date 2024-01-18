@@ -21,6 +21,34 @@ namespace RPS.Models
       set { _playerTwoChoice = value; }
     }
 
+    private string _computerChoice;
+    public string ComputerChoice
+    {
+      get { return _computerChoice; }
+      set { _computerChoice = value; }
+    }
+
+    public string ComputerPick()
+    {
+      Random random = new Random();
+      int choice = random.Next(1, 4);
+
+      if (choice == 1)
+      {
+        ComputerChoice = "rock";
+        return "rock";
+      } 
+      else if (choice == 2) 
+      {
+        ComputerChoice = "paper";
+        return "paper";
+      } 
+      else
+      {
+        ComputerChoice = "scissors";
+        return "scissors";
+      } 
+    }
     public string CheckWinner()
     {
       if (_playerOneChoice == _playerTwoChoice)

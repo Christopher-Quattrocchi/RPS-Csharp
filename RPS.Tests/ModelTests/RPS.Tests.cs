@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Data;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RPS.UserInterfaceModels;
 
 namespace RPS.Tests;
 
@@ -64,7 +65,7 @@ public class UnitTest1
     RPSGame newGame = new RPSGame();
     newGame.PlayerOneChoice = "rock";
     newGame.PlayerTwoChoice = "scissors";
-    Assert.AreEqual(newGame.CheckWinner(), "Player One Wins");
+    Assert.AreEqual(newGame.CheckWinner(), PlayerOneWinsBanner.PlayerOneWins);
   }
   [TestMethod]
   public void CheckWinner_CheckIfPlayerTwoWins_String()
@@ -72,7 +73,17 @@ public class UnitTest1
     RPSGame newGame = new RPSGame();
     newGame.PlayerOneChoice = "rock";
     newGame.PlayerTwoChoice = "paper";
-    Assert.AreEqual(newGame.CheckWinner(), "Player Two Wins");
+    Assert.AreEqual(newGame.CheckWinner(), PlayerTwoWinsBanner.PlayerTwoWins);
+  }
+  [TestMethod]
+  public void CheckCompRandom_CheckIfCompAssignedChoice_String()
+  {
+    RPSGame newGame = new RPSGame();
+    newGame.ComputerPick();
+    List<string> validChoices = new List<string> {"rock", "paper", "scissors"};
+    bool isValidChoice = validChoices.Contains(newGame.ComputerChoice);
+    Assert.IsTrue(isValidChoice, $"Invalid choice: {newGame.ComputerChoice}");
+    
   }
 }
 

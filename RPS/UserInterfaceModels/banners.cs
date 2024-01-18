@@ -1,6 +1,6 @@
 namespace RPS.UserInterfaceModels
 {
-  class WelcomeBanner
+  public class WelcomeBanner
   {
     public static string Welcome { get; } = @" 
  ________  ________  ________  ___  __                                           
@@ -34,7 +34,7 @@ namespace RPS.UserInterfaceModels
                                                                                  
                                                                                  ";
   }
-  class PlayerOneWinsBanner
+  public class PlayerOneWinsBanner
   {
     public static string PlayerOneWins { get; } = @"
  ________  ___       ________      ___    ___ _______   ________          ________  ________   _______      
@@ -49,7 +49,7 @@ namespace RPS.UserInterfaceModels
                                                                                                             ";
 
   }
-  class PlayerTwoWinsBanner
+  public class PlayerTwoWinsBanner
   {
     public static string PlayerTwoWins { get; } = @"
  ________  ___       ________      ___    ___ _______   ________          _________  ___       __   ________     
@@ -64,7 +64,7 @@ namespace RPS.UserInterfaceModels
                                                                                                                  ";
   }
 
-  class Goodbye
+  public class Goodbye
   {
     public static string GameClose { get; } = @"
  ________  ________  ________  ________  ________      ___    ___ _______   ___       
