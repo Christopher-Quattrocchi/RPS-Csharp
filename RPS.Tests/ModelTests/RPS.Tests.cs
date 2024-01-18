@@ -49,6 +49,31 @@ public class UnitTest1
     newGame.PlayerTwoChoice = newValue;
     Assert.AreEqual(newValue, newGame.PlayerTwoChoice);
   }
+
+  [TestMethod]
+  public void CheckWinner_CheckIfDraw_String()
+  {
+    RPSGame newGame = new RPSGame();
+    newGame.PlayerOneChoice = "rock";
+    newGame.PlayerTwoChoice = "rock";
+    Assert.AreEqual(newGame.CheckWinner(), "Draw");
+  }
+  [TestMethod]
+  public void CheckWinner_CheckIfPlayerOneWins_String()
+  {
+    RPSGame newGame = new RPSGame();
+    newGame.PlayerOneChoice = "rock";
+    newGame.PlayerTwoChoice = "scissors";
+    Assert.AreEqual(newGame.CheckWinner(), "Player One Wins");
+  }
+  [TestMethod]
+  public void CheckWinner_CheckIfPlayerTwoWins_String()
+  {
+    RPSGame newGame = new RPSGame();
+    newGame.PlayerOneChoice = "rock";
+    newGame.PlayerTwoChoice = "paper";
+    Assert.AreEqual(newGame.CheckWinner(), "Player Two Wins");
+  }
 }
 
 

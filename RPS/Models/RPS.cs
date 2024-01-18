@@ -20,5 +20,22 @@ namespace RPS.Models
       set { _playerTwoChoice = value; }
     }
 
+    public string CheckWinner()
+    {
+      if (_playerOneChoice == _playerTwoChoice)
+      {
+        return "Draw";
+      }
+      else if ((_playerOneChoice == "rock" && _playerTwoChoice == "scissors") || 
+      (_playerOneChoice == "scissors" && _playerTwoChoice == "paper") || 
+      (_playerOneChoice == "paper" && _playerTwoChoice == "rock"))
+      {
+        return "Player One Wins";
+      }
+      else
+      {
+        return "Player Two Wins";
+      }
+    }
   }
 }
