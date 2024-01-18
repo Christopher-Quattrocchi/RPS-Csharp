@@ -11,7 +11,6 @@ namespace RPS.Models
     {
       get { return _playerOneChoice; } 
       set { _playerOneChoice = value; }
- 
     }
 
     private string _playerTwoChoice;
@@ -26,6 +25,19 @@ namespace RPS.Models
     {
       get { return _computerChoice; }
       set { _computerChoice = value; }
+    }
+
+    public void PlayTwoPlayerGame(string playerOneChoice, string playerTwoChoice)
+    {
+      PlayerOneChoice = playerOneChoice;
+      PlayerTwoChoice = playerTwoChoice;
+    }
+
+    public void PlayComputerGame(string playerOneChoice)
+    {
+      PlayerOneChoice = playerOneChoice;
+      ComputerChoice = ComputerPick();
+      PlayerTwoChoice = ComputerChoice;
     }
 
     public string ComputerPick()
@@ -53,7 +65,7 @@ namespace RPS.Models
     {
       if (_playerOneChoice == _playerTwoChoice)
       {
-        return "Draw";
+        return Draw.GameDraw;
       }
       else if ((_playerOneChoice == "rock" && _playerTwoChoice == "scissors") || 
       (_playerOneChoice == "scissors" && _playerTwoChoice == "paper") || 
@@ -64,6 +76,24 @@ namespace RPS.Models
       else
       {
         return PlayerTwoWinsBanner.PlayerTwoWins;
+      }
+    }
+
+    public string CheckWinnerComp()
+    {
+      if (_playerOneChoice == _computerChoice)
+      {
+        return Draw.GameDraw;
+      }
+      else if ((_playerOneChoice == "rock" && _computerChoice == "scissors") || 
+      (_playerOneChoice == "scissors" && _computerChoice == "paper") || 
+      (_playerOneChoice == "paper" && _computerChoice == "rock"))
+      {
+        return PlayerOneWinsBanner.PlayerOneWins;
+      }
+      else
+      {
+        return ComputerWinsBanner.ComputerWins;
       }
     }
   }

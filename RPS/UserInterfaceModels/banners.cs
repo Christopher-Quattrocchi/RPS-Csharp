@@ -1,3 +1,5 @@
+using System.Dynamic;
+
 namespace RPS.UserInterfaceModels
 {
   public class WelcomeBanner
@@ -64,6 +66,19 @@ namespace RPS.UserInterfaceModels
                                                                                                                  ";
   }
 
+  public class ComputerWinsBanner
+  {
+    public static string ComputerWins { get;} = @"
+   _____ _                     _    __      ___      _                   
+  / ____| |                   | |   \ \    / (_)    | |                  
+ | (___ | | ___   _ _ __   ___| |_   \ \  / / _  ___| |_ ___  _ __ _   _ 
+  \___ \| |/ / | | | '_ \ / _ \ __|   \ \/ / | |/ __| __/ _ \| '__| | | |
+  ____) |   <| |_| | | | |  __/ |_     \  /  | | (__| || (_) | |  | |_| |
+ |_____/|_|\_\\__, |_| |_|\___|\__|     \/   |_|\___|\__\___/|_|   \__, |
+               __/ |                                                __/ |
+              |___/                                                |___/ ";
+  }
+
   public class Goodbye
   {
     public static string GameClose { get; } = @"
@@ -77,6 +92,18 @@ namespace RPS.UserInterfaceModels
                                                      \|___|/                     |\__\
                                                                                  \|__|
                                                                                       ";
+  }
+
+  public class Draw
+  {
+    public static string GameDraw { get; } = @"
+██████╗ ██████╗  █████╗ ██╗    ██╗
+██╔══██╗██╔══██╗██╔══██╗██║    ██║
+██║  ██║██████╔╝███████║██║ █╗ ██║
+██║  ██║██╔══██╗██╔══██║██║███╗██║
+██████╔╝██║  ██║██║  ██║╚███╔███╔╝
+╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ 
+                                  "; 
   }
 
 }

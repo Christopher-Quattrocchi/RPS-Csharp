@@ -16,6 +16,25 @@ namespace RPS
         RPSGame newGame = new RPSGame();
 
         Console.WriteLine("Let's Play Rock, Paper, Scissors!");
+        Console.WriteLine("2 player or computer game? Type A for two player and B for Computer");
+        string opponent = Console.ReadLine();
+        if ( opponent == "a" || opponent == "A")
+        {
+          PlayTwoPlayerGame(newGame);
+        }
+        else if (opponent == "b" || opponent =="B")
+        {
+          PlayComputerGame(newGame); 
+        }
+        else 
+        {
+          Console.WriteLine("Invalid input. Please choose A or B")
+        }
+
+        private static void PlayTwoPlayerGame (RPSGame game)
+        {
+
+        }
 
         Console.WriteLine("Player One, type 'R' for ROCK, 'P' for PAPER, or 'S' for Scissors");
         Console.WriteLine("Type 'exit' at any time to close this game");
@@ -48,9 +67,11 @@ namespace RPS
           break;
         }
       }
-
-
     }
+
+
+
+
     private static string ValidateChoice(string choice)
     {
       switch (choice.ToUpper())
