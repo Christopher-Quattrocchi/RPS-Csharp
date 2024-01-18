@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Globalization;
+using RPS.UserInterfaceModels;
 
 namespace RPS.Models
 {
@@ -30,11 +31,11 @@ namespace RPS.Models
       (_playerOneChoice == "scissors" && _playerTwoChoice == "paper") || 
       (_playerOneChoice == "paper" && _playerTwoChoice == "rock"))
       {
-        return "Player One Wins";
+        return PlayerOneWinsBanner.PlayerOneWins;
       }
       else
       {
-        return "Player Two Wins";
+        return PlayerTwoWinsBanner.PlayerTwoWins;
       }
     }
   }
